@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}"> <!-- Add your CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Welcome to Your Fitness Dashboard</h1>
+        <a href="{{ url_for('login') }}">Login</a>  <!-- Link to log in -->
+    </header>
+
+    <nav>
+        <!-- Add navigation links to other sections of the dashboard -->
+        <ul>
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#workouts">Workouts</a></li>
+            <li><a href="#nutrition">Nutrition</a></li>
+            <li><a href="#progress">Progress</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Content for different sections of the dashboard -->
+        <section id="profile">
+            <h2>Your Profile</h2>
+            <!-- Display user profile information (e.g., name, email) -->
+        </section>
+
+        <section id="workouts">
+            <h2>Your Workouts</h2>
+            <!-- Display a list of user's workouts, workout plans, etc. -->
+        </section>
+
+        <section id="nutrition">
+            <h2>Your Nutrition</h2>
+            <!-- Display user's nutrition information, meal plans, etc. -->
+        </section>
+
+        <section id="progress">
+            <h2>Your Progress</h2>
+            <!-- Display charts, graphs, or statistics related to user's fitness progress -->
+        </section>
+    </main>
+
+    <footer>
+        <!-- Add footer content, copyright information, etc. -->
+    </footer>
+</body>
+</html>

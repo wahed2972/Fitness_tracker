@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Daily Task</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Add your CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Submit Daily Task</h1>
+        <a href="/dashboard">Back to Dashboard</a> <!-- Link to go back to the dashboard -->
+    </header>
+
+    <main>
+        <section>
+            <h2>Task Details</h2>
+            <form action="/submit-task" method="post">
+                <label for="taskName">Task Name:</label>
+                <input type="text" id="taskName" name="taskName" required><br><br>
+
+                <label for="taskDescription">Task Description:</label>
+                <textarea id="taskDescription" name="taskDescription" rows="4" required></textarea><br><br>
+
+                <label for="taskDate">Date:</label>
+                <input type="date" id="taskDate" name="taskDate" required><br><br>
+
+                <label for="taskTime">Time:</label>
+                <input type="time" id="taskTime" name="taskTime" required><br><br>
+
+                <button type="submit">Submit Task</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Add footer content, copyright information, etc. -->
+    </footer>
+</body>
+</html>
