@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout 4</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='workout_all.css') }}">
+    <script>
+        // JavaScript function to toggle workout description
+        function toggleDescription() {
+            var description = document.getElementById("workout-description");
+            if (description.style.display === "none" || description.style.display === "") {
+                description.style.display = "block";
+            } else {
+                description.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Workout 4</h1>
+    </header>
+
+    <main>
+        <section class="workout-description">
+            <h2>Description</h2>
+            <ul>
+    <li><strong>Starting Position:</strong>
+        <ul>
+            <li>Stand up straight with your feet shoulder-width apart.</li>
+            <li>Keep your chest up, shoulders back, and your gaze straight ahead or slightly upward.</li>
+        </ul>
+    </li>
+    <li><strong>Engage Your Core:</strong>
+        <ul>
+            <li>Tighten your core muscles to maintain stability and support your spine.</li>
+        </ul>
+    </li>
+    <li><strong>Initiate the Squat:</strong>
+        <ul>
+            <li>Begin the squat by pushing your hips back as if you're sitting into a chair.</li>
+            <li>Imagine lowering your body down and back, not just bending your knees.</li>
+            <li>As you lower your body, keep your chest up, and your back straight (avoid rounding your back).</li>
+        </ul>
+    </li>
+    <li><strong>Bend Your Knees:</strong>
+        <ul>
+            <li>As you continue to lower yourself, bend your knees.</li>
+            <li>Aim to lower your hips until your thighs are parallel to the ground or as far down as your mobility and strength allow.</li>
+            <li>Ensure your knees stay aligned with your feet and do not collapse inward.</li>
+        </ul>
+    </li>
+    <li><strong>Hold the Squat Position:</strong>
+        <ul>
+            <li>At the bottom of the squat, your weight should be on your heels, and your knees should be above your ankles.</li>
+            <li>Your back should remain straight, and your chest should still be up.</li>
+        </ul>
+    </li>
+    <li><strong>Return to the Starting Position:</strong>
+        <ul>
+            <li>Push through your heels and extend your hips and knees simultaneously to return to the starting position.</li>
+            <li>Exhale as you stand up.</li>
+        </ul>
+    </li>
+    <li><strong>Repeat:</strong>
+        <ul>
+            <li>Perform the desired number of repetitions. Squats are often done in sets of 8-12 reps.</li>
+        </ul>
+    </li>
+</ul>
+
+            <p>Sets:3</p>
+            <p>Rep:10</p>
+        </section>
+
+        <!-- Add an image representation of the exercise -->
+        <img src="{{ url_for('static', filename='GIF/squats.gif') }}" alt="Exercise 4 Image" width="300">
+
+        <!-- Add a button to toggle workout description -->
+        <button onclick="toggleDescription()">Tips and Notes:</button>
+
+        <!-- Add a div for workout description that can be toggled -->
+        <div id="workout-description" style="display: none;">
+            <h2>Additional Details</h2>
+            <ul>
+        <li>Warm up before performing squats to prevent injury.</li>
+        <li>Pay attention to your breathing; exhale as you push up and inhale as you lower down.</li>
+        <li>Use a mirror or have someone watch your form to ensure you're performing squats correctly.</li>
+        <li>As you become more experienced, you can add weights, like dumbbells or a barbell, to increase resistance.</li>
+    </ul>
+
+        </div>
+    </main>
+
+    <footer>
+        <!-- Add footer content here -->
+    </footer>
+</body>
+</html>

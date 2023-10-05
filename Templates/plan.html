@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='plan.css') }}">
+    <title>Plan Page</title>
+</head>
+<body>
+    <h1>Plan Page</h1>
+    <p>Choose a plan:</p>
+    <ul>
+        <li>
+            <h2>Beginner</h2>
+            <p>Get started with a beginner's fitness plan.</p>
+            <<a href="{{ url_for('beginner_plan') }}">View Beginner Plan</a>
+        </li>
+        <li>
+            <h2>Intermediate</h2>
+            <p>Take your fitness to the next level with an intermediate plan.</p>
+            <a href="{{ url_for('intermediate_plan') }}">View Intermediate Plan</a>
+        </li>
+        <li>
+            <h2>Advanced</h2>
+            <p>Challenge yourself with an advanced fitness plan.</p>
+            <a href="{{ url_for('advanced_plan') }}">View Advanced Plan</a>
+        </li>
+    </ul>
+</body>
+</html>

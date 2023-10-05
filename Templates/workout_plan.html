@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workouts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='workout.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Your Workouts</h1>
+    </header>
+
+    <main>
+        <div class="container"> <!-- Add the container here -->
+            <section class="workout-list">
+                <h2>Workout List</h2>
+                <ul>
+                    <li>
+                        <h3><a href="{{ url_for('workout1') }}">Workout 1: PushUps</a></h3>
+                        <p>Chest</p>
+                    </li>
+                    <li>
+                        <h3><a href="{{ url_for('workout2') }}">Workout 2: PullUps</a></h3>
+                        <p>Back</p>
+                    </li>
+                    <li>
+                        <h3><a href="{{ url_for('workout3') }}">Workout 3: Dumbbell Curls</a></h3>
+                        <p>Biceps</p>
+                    </li>
+                     <li>
+                        <h3><a href="{{ url_for('workout4') }}">Workout 4: Squats</a></h3>
+                        <p>Legs</p>
+                    </li> 
+                  <li>
+                        <h3><a href="{{ url_for('workout5') }}">Workout 5: Shoulder Press</a></h3>
+                        <p>Shoulder</p>
+                    </li>
+                    <li>
+                        <h3><a href="{{ url_for('workout6') }}">Workout 6: Crunches</a></h3>
+                        <p>Abs(Core)</p>
+                    </li>
+                    <li>
+                        <h3><a href="{{ url_for('workout7') }}">Workout 7: Lat Pulldown</a></h3>
+                        <p>Back</p>
+                    </li>
+                </ul>
+            </section>
+        </div> <!-- Close the container here -->
+    </main>
+
+    <footer>
+        <!-- Add footer content here -->
+    </footer>
+</body>
+</html>

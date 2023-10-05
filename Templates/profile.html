@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='profile.css') }}">
+</head>
+<body>
+    <header>
+        <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+    </header>
+    
+    <div class="container">
+        <h2>User Profile</h2>
+        <form action="/update_profile" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" value="{{ user.username }}" required><br><br>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="{{ user.name }}" required><br><br>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" value="{{ user.age }}" required><br><br>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="male" {% if user.gender == 'male' %}selected{% endif %}>Male</option>
+                <option value="female" {% if user.gender == 'female' %}selected{% endif %}>Female</option>
+            </select><br><br>
+
+            <label for="weight">Weight:</label>
+            <input type="number" id="weight" name="weight" value="{{ user.weight }}" required><br><br>
+
+            <label for="height">Height:</label>
+            <input type="number" id="height" name="height" value="{{ user.height }}" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="{{ user.email }}" required><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+
+            <label for="goal">Fitness Goal:</label>
+            <select id="goal" name="goal" required>
+                <option value="Muscle Gain" {% if user.fitness_goal == 'Muscle Gain' %}selected{% endif %}>Muscle Gain</option>
+                <option value="Endurance" {% if user.fitness_goal == 'Endurance' %}selected{% endif %}>Endurance</option>
+                <option value="Max Strength" {% if user.fitness_goal == 'Max Strength' %}selected{% endif %}>Max Strength</option>
+                <option value="Get Toned" {% if user.fitness_goal == 'Get Toned' %}selected{% endif %}>Get Toned</option>
+            </select><br><br>
+
+            <label for="area">Focus Area:</label>
+            <select id="area" name="area" required>
+                <option value="Back" {% if user.focus_area == 'Back' %}selected{% endif %}>Back</option>
+                <option value="Shoulder" {% if user.focus_area == 'Shoulder' %}selected{% endif %}>Shoulder</option>
+                <option value="Arm" {% if user.focus_area == 'Arm' %}selected{% endif %}>Arm</option>
+                <option value="Chest" {% if user.focus_area == 'Chest' %}selected{% endif %}>Chest</option>
+                <option value="Abs" {% if user.focus_area == 'Abs' %}selected{% endif %}>Abs</option>
+                <option value="Leg" {% if user.focus_area == 'Leg' %}selected{% endif %}>Leg</option>
+                <option value="FullBody" {% if user.focus_area == 'FullBody' %}selected{% endif %}>Full Body</option>
+            </select><br><br>
+
+            <button type="submit" class="update-profile-button">Update Profile</button>
+        </form>
+    </div>
+</body>
+</html>

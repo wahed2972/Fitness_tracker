@@ -1,0 +1,142 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply styles to the body for background and font */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("reg.jpg"); /* Add your image URL here */
+    background-repeat: no-repeat; /* Prevent background image from repeating */
+    background-size: cover;
+    background-position: center;
+    background-color: whitesmoke;
+}
+
+/* Apply styles to the container */
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the header */
+h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Style the form elements */
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+select#gender {
+    background-color: #f0f0f0;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 0 auto; /* Center horizontally */
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Style the "Already have an account?" link */
+p {
+    color: #777;
+    text-align: center;
+    margin-top: 20px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Apply styles to the fitness goal and focus area buttons */
+.btn-group {
+    text-align: center;
+}
+
+.btn {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+/* Apply styles for selected fitness goal and focus area */
+.selected {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Apply styles to the "Select Area to Focus On" buttons */
+.area-button {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.area-button:hover {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+/* Apply styles for the selected area button */
+.area-button.selected {
+    background-color: #007bff;
+    color: #fff;
+}
+

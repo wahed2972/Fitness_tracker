@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Progress</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <!-- Navigation bar -->
+        <nav>
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Users</a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sidebar -->
+        <aside>
+
+        </aside>
+
+        <!-- Content area -->
+        <section>
+            <h1>Progress Page</h1>
+            <div class="user-list">
+                <!-- User list: Replace with data from your database or backend -->
+                <ul>
+                    <li><a href="#" onclick="showUserProgress(1)">User 1</a></li>
+                    <li><a href="#" onclick="showUserProgress(2)">User 2</a></li>
+                    <li><a href="#" onclick="showUserProgress(3)">User 3</a></li>
+                    <!-- Add more users here -->
+                </ul>
+            </div>
+            <div class="user-progress">
+                <!-- User progress chart: Initially hidden, shown when a user is clicked -->
+                <canvas id="user-chart" width="400" height="200"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Footer content -->
+        <p>&copy; 2023 Admin Dashboard</p>
+    </footer>
+
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // Function to show user progress chart
+        function showUserProgress(userId) {
+            // Replace with logic to fetch user progress data from your backend
+            const userProgressData = getProgressData(userId);
+
+            // Configure and render the chart
+            const ctx = document.getElementById('user-chart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line', // Use the chart type you prefer (line, bar, etc.)
+                data: {
+                    labels: userProgressData.labels, // X-axis labels
+                    datasets: [{
+                        label: 'User Progress',
+                        data: userProgressData.data, // Y-axis data
+                        borderColor: 'rgb(75, 192, 192)',
+                        borderWidth: 2,
+                        fill: false,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            beginAtZero: true
+                        },
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Show the user progress chart
+            document.querySelector('.user-progress').style.display = 'block';
+        }
+
+        // Function to fetch user progress data from your backend
+        function getProgressData(userId) {
+            // Replace with an AJAX request to fetch user progress data
+            // Example data:
+            return {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                data: [10, 20, 15, 30] // Example progress data
+            };
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Submit</title>
+    <!-- Add your CSS file link here -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='submit.css') }}">
+    
+</head>
+
+<body>
+    <header>
+        <h1>Submit ---</h1>
+        <a href="dashboard.html" style="color:white;margin-right: 10px; font-weight: bold;font-size: 16px;"> Dashboard</a> <!-- Add a link to your dashboard page -->
+        <!-- You can include a "Logout" or "Back to Dashboard" link here if needed -->
+    </header>
+
+    <main>
+        <section>
+            <h2> Exercise </h2>
+            <form action="/submit" method="post" onsubmit="return validateForm(this);">
+                <div id="exercise-container">
+                    <!-- Exercise entry fields (name, reps, sets) -->
+                    <div class="exercise-entry">
+                        <label for="exercise-name-1">Exercise Name</label>
+                        <input type="text" id="exercise-name-1" name="exercise_name[]" required>
+                        <label for="exercise-reps-1">Reps</label>
+                        <input type="number" id="exercise-reps-1" name="exercise_reps[]" required>
+                        <label for="exercise-sets-1">Sets</label>
+                        <input type="number" id="exercise-sets-1" name="exercise_sets[]" required>
+                    </div>
+                </div>
+
+                <!-- Button to add more exercise entries -->
+                <button type="button" onclick="addExerciseField()">Add Exercise</button><br><br>
+
+            </form>
+        </section>
+
+        <section>
+            <h2>Diet</h2>
+            <form action="/submit" method="post" onsubmit="return validateForm(this);">
+                <div id="nutrition-container">
+                    <!-- Nutrition entry fields (food name, calorie intake) -->
+                    <div class="nutrition-entry">
+                        <label for="food-name-1">Meal</label>
+                        <input type="text" id="food-name-1" name="food_name[]" required>
+                        <label for="calories-1">Calorie Intake</label>
+                        <input type="number" id="calories-1" name="calories[]" required>
+                    </div>
+                </div>
+
+                <!-- Button to add more nutrition entries -->
+                <button type="button" onclick="addNutritionField()">Add Nutrition</button><br><br>
+
+            </form>
+        </section>
+        <div class="submit-button-container">
+            <form action="/submit" method="post">
+                <input type="submit" value="Submit">
+            </form>
+        </div>    
+        
+    </main>
+
+    <footer>
+        <!-- Add footer content, copyright information, etc. -->
+    </footer>
+
+    <script>
+        // JavaScript function to add exercise fields dynamically
+        function addExerciseField() {
+            const exerciseContainer = document.getElementById('exercise-container');
+            const newExercise = document.createElement('div');
+            newExercise.className = 'exercise-entry'; // Add a class for styling
+            newExercise.innerHTML = `
+                <label for="exercise-name">Exercise Name </label>
+                <input type="text" id="exercise-name" name="exercise_name[]" required>
+                <label for="exercise-reps">Reps </label>
+                <input type="number" id="exercise-reps" name="exercise_reps[]" required>
+                <label for="exercise-sets"> Sets </label>
+                <input type="number" id="exercise-sets" name="exercise_sets[]" required>
+                <button type="button" onclick="removeEntry(this)">Delete</button>
+            `;
+            exerciseContainer.appendChild(newExercise);
+        }
+
+        // JavaScript function to add nutrition fields dynamically
+        function addNutritionField() {
+            const nutritionContainer = document.getElementById('nutrition-container');
+            const newNutrition = document.createElement('div');
+            newNutrition.className = 'nutrition-entry'; // Add a class for styling
+            newNutrition.innerHTML = `
+                <label for="food-name">Meal </label>
+                <input type="text" id="food-name" name="food_name[]" required>
+                <label for="calories">Calorie Intake </label>
+                <input type="number" id="calories" name="calories[]" required>
+                <button type="button" onclick="removeEntry(this)">Delete</button>
+            `;
+            nutritionContainer.appendChild(newNutrition);
+        }
+
+        function removeEntry(button) {
+            const entry = button.parentNode;
+            const container = entry.parentNode;
+            container.removeChild(entry);
+        }
+
+        function validateForm(form) {
+            const requiredFields = form.querySelectorAll('[required]');
+            for (const field of requiredFields) {
+                if (!field.value.trim()) {
+                    alert('Please fill in all required fields.');
+                    return false; // Prevent form submission
+                }
+            }
+            return true; // Allow form submission if all fields are filled
+        }
+    </script>
+</body>
+</html>

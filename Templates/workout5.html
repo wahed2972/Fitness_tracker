@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout 5</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='workout_all.css') }}">
+    <script>
+        // JavaScript function to toggle workout description
+        function toggleDescription() {
+            var description = document.getElementById("workout-description");
+            if (description.style.display === "none" || description.style.display === "") {
+                description.style.display = "block";
+            } else {
+                description.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Workout 5</h1>
+    </header>
+
+    <main>
+        <section class="workout-description">
+            <h2>Description</h2>
+            <ul>
+    <li><strong>Starting Position:</strong>
+        <ul>
+            <li>Sit on a sturdy, upright bench or chair with back support.</li>
+            <li>Hold a dumbbell in each hand at shoulder height with palms facing forward.</li>
+            <li>Feet flat on the floor, shoulder-width apart.</li>
+        </ul>
+    </li>
+    <li><strong>Engage Your Core:</strong>
+        <ul>
+            <li>Tighten your core muscles for stability.</li>
+        </ul>
+    </li>
+    <li><strong>Press the Weights:</strong>
+        <ul>
+            <li>Exhale as you press the dumbbells upward.</li>
+            <li>Extend your arms fully overhead, palms facing forward.</li>
+        </ul>
+    </li>
+    <li><strong>Hold at the Top:</strong>
+        <ul>
+            <li>At the top, arms fully extended but not locked.</li>
+            <li>Squeeze your shoulder muscles briefly.</li>
+        </ul>
+    </li>
+    <li><strong>Lower the Weights:</strong>
+        <ul>
+            <li>Inhale as you lower the dumbbells back to shoulder height with control.</li>
+        </ul>
+    </li>
+    <li><strong>Repeat:</strong>
+        <ul>
+            <li>Perform the desired number of repetitions. Sets of 8-12 reps are common.</li>
+        </ul>
+    </li>
+</ul>
+
+
+            <p>Sets:3</p>
+            <p>Rep:10</p>
+        </section>
+
+        <!-- Add an image representation of the exercise -->
+        <img src="{{ url_for('static', filename='GIF/shoulder press.gif') }}" alt="Exercise 5 Image" width="300">
+
+        <!-- Add a button to toggle workout description -->
+        <button onclick="toggleDescription()">Tips and Notes:</button>
+
+        <!-- Add a div for workout description that can be toggled -->
+        <div id="workout-description" style="display: none;">
+            <h2>Additional Details</h2>
+           <ul>
+        <li>Use proper form: Maintain a neutral spine throughout the exercise, and avoid arching your back.</li>
+        <li>Start with an appropriate weight: Choose a weight that allows you to perform the exercise with good form and control.</li>
+        <li>Control the tempo: Don't rush the movement; focus on controlled lifting and lowering of the dumbbells.</li>
+        <li>Warm up your shoulders: Prior to the shoulder press, warm up your shoulder muscles with dynamic stretches or light shoulder exercises.</li>
+        <li>Consult a fitness professional: If you're new to strength training or have any shoulder issues, consider seeking guidance from a fitness expert to ensure you're performing the exercise safely.</li>
+    </ul>
+
+        </div>
+    </main>
+
+    <footer>
+        <!-- Add footer content here -->
+    </footer>
+</body>
+</html>

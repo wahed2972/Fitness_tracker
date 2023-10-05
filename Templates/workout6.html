@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout 6</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='workout_all.css') }}">
+    <script>
+        // JavaScript function to toggle workout description
+        function toggleDescription() {
+            var description = document.getElementById("workout-description");
+            if (description.style.display === "none" || description.style.display === "") {
+                description.style.display = "block";
+            } else {
+                description.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Workout 6</h1>
+    </header>
+
+    <main>
+        <section class="workout-description">
+            <h2>Description</h2>
+            <ul>
+    <li><strong>Starting Position:</strong>
+        <ul>
+            <li>Lie on your back on a comfortable, flat surface (e.g., yoga mat).</li>
+            <li>Bend your knees and place your feet flat on the floor, hip-width apart.</li>
+            <li>Cross your arms over your chest or place your hands gently behind your head.</li>
+        </ul>
+    </li>
+    <li><strong>Engage Your Core:</strong>
+        <ul>
+            <li>Tighten your core muscles by drawing your belly button toward your spine.</li>
+            <li>Create a slight arch in your lower back against the floor.</li>
+        </ul>
+    </li>
+    <li><strong>Crunch:</strong>
+        <ul>
+            <li>Exhale as you lift your upper body off the floor using your abdominal muscles.</li>
+            <li>Move your ribcage toward your pelvis while keeping your lower back on the ground.</li>
+            <li>Lift your head, neck, and shoulders together.</li>
+        </ul>
+    </li>
+    <li><strong>Hold the Contraction:</strong>
+        <ul>
+            <li>At the top of the movement, squeeze your abdominal muscles for a brief pause (the "crunched" position).</li>
+        </ul>
+    </li>
+    <li><strong>Lower Back Down:</strong>
+        <ul>
+            <li>Inhale as you slowly and controlledly lower your upper body back down to the starting position, one vertebra at a time.</li>
+            <li>Keep your lower back in contact with the floor throughout.</li>
+        </ul>
+    </li>
+    <li><strong>Repeat:</strong>
+        <ul>
+            <li>Perform the desired number of repetitions. Sets of 12-20 reps are common for crunches.</li>
+        </ul>
+    </li>
+</ul>
+
+
+            <p>Sets:2</p>
+            <p>Rep:10</p>
+        </section>
+
+        <!-- Add an image representation of the exercise -->
+        <img src="{{ url_for('static', filename='GIF/crunches.gif') }}" alt="Exercise 6 Image" width="300">
+
+        <!-- Add a button to toggle workout description -->
+        <button onclick="toggleDescription()">Tips and Notes:</button>
+
+        <!-- Add a div for workout description that can be toggled -->
+        <div id="workout-description" style="display: none;">
+            <h2>Additional Details</h2>
+            <ul>
+        <li>Focus on the quality of the movement: Concentrate on using your abdominal muscles rather than the quantity of reps.</li>
+        <li>Breathe properly: Exhale as you lift your upper body and inhale as you lower it down.</li>
+        <li>Keep your movements controlled: Avoid using momentum to lift your upper body; instead, use your core strength.</li>
+        <li>Variations: To challenge your core further, consider trying different crunch variations, such as bicycle crunches or reverse crunches.</li>
+        <li>Consult a fitness professional: If you're new to abdominal exercises or have any back issues, consider seeking guidance from a fitness expert to ensure you're performing the exercise safely.</li>
+    </ul>
+
+        </div>
+    </main>
+
+    <footer>
+        <!-- Add footer content here -->
+    </footer>
+</body>
+</html>

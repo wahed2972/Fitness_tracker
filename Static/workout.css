@@ -1,0 +1,62 @@
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('img2.jpg'); /* Add your image URL here */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent background image from repeating */
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9); /* Add a semi-transparent white background */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    transition: background-color 0.3s ease; /* Smooth color change on hover */
+}
+
+header:hover {
+    background-color: #555;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.main-content {
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+.workout-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.workout-list li {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    transition: transform 0.2s ease; /* Slight scale-up effect on hover */
+}
+
+.workout-list li:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Box shadow on hover */
+}
+
+.workout-list h3 {
+    margin: 0;
+}
+
+/* Add more interactive styles as needed */

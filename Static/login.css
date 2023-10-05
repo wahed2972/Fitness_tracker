@@ -1,0 +1,73 @@
+/* Apply styles to the container */
+/* Apply styles to the body */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('log.jpg'); /* Add your image URL here */
+    background-size: cover; /* Scale the image to cover the entire body */
+    background-position: center; /* Center the image horizontally and vertically */
+    font-family: Arial, sans-serif; /* You can specify your desired font here */
+}
+
+/* Apply styles to the container */
+.container {
+    max-width: 400px;
+    margin: 0 auto; /* Center horizontally */
+    padding: 200px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent background color to the container */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the header */
+h2 {
+    color: #333;
+}
+
+/* Style the form elements */
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Style the "Don't have an account?" link */
+p {
+    color: #777;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}

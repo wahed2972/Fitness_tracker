@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='users.css') }}"> 
+</head>
+<body>
+    <header>
+        <li><a href="{{ url_for('admin_dashboard') }}">Dashboard</a></li>
+    </header>
+
+    <main>
+        <h1>User List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                    <th>Weight</th>
+                    <th>Height</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.age }}</td>
+                        <td>{{ user.weight }}</td>
+                        <td>{{ user.height }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            
+        </table>
+    </main>
+
+    <footer>
+        <!-- Footer content (if needed) -->
+    </footer>
+</body>
+</html>

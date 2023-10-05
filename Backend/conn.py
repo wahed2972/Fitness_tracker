@@ -8,8 +8,8 @@ cursor = conn.cursor()
 
 # Define a table for user information
 cursor.execute('''
-    CREATE TABLE IF NOT EXISTS users (
-        user_id INTEGER PRIMARY KEY,
+    CREATE TABLE IF NOT EXISTS user (
+        user_id INTEGER PRIMARY KEY AUTOINCREMENT,
         username TEXT UNIQUE NOT NULL,
         email TEXT UNIQUE NOT NULL,
         password TEXT NOT NULL

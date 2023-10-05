@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin_dashboard.css') }}"> 
+
+</head>
+<body>
+    <header>
+        <!-- Navigation bar -->
+        <nav>
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="{{ url_for('user_list') }}">Users</a></li>
+                <li><a  href="">Update PLan</a></li> 
+                <li><a href="{{ url_for('add_plan') }}">Add Plan</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="{{ url_for('logout')}}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sidebar -->
+        <aside>
+            
+        </aside>
+
+        <!-- Content area -->
+        <section>
+            <h1>Welcome, Trainer!</h1>
+            <div>
+                <!-- Add your content here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Footer content -->
+        <p>&copy; 2023 Admin Dashboard</p>
+    </footer>
+</body>
+</html>

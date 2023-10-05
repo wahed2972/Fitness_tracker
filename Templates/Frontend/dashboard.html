@@ -3,50 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Dashboard</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}"> <!-- Add your CSS file -->
+    <title>Gym Homepage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <!-- Include your custom CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+
 </head>
 <body>
     <header>
-        <h1>Welcome to Your Fitness Dashboard</h1>
-        <a href="{{ url_for('login') }}">Login</a>  <!-- Link to log in -->
+        {% if logged_in %}
+        <p>Logged in as {{ username }}</p>
+        {% endif %}
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">Gym & Fitness</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('workout_plan') }}">Exercise</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('plan') }}">Plan</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('contact_us') }}">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('profile') }}">Profile</a>
+                        </li>
+                        {% if logged_in %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('login')}} ">Login</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container text-center">
+            <h1 class="mt-5">Your Fitness Journey Begins Here</h1>
+            <p class="lead">Join us and achieve your fitness goals.</p>
+            <a href="{{ url_for('login')}}" class="btn btn-primary btn-lg">Get Started</a>
+        </div>
+        <div class="image">
+
+        </div>
     </header>
 
-    <nav>
-        <!-- Add navigation links to other sections of the dashboard -->
-        <ul>
-            <li><a href="#profile">Profile</a></li>
-            <li><a href="#workouts">Workouts</a></li>
-            <li><a href="#nutrition">Nutrition</a></li>
-            <li><a href="#progress">Progress</a></li>
-        </ul>
-    </nav>
+    <!-- Rest of the content -->
 
-    <main>
-        <!-- Content for different sections of the dashboard -->
-        <section id="profile">
-            <h2>Your Profile</h2>
-            <!-- Display user profile information (e.g., name, email) -->
-        </section>
-
-        <section id="workouts">
-            <h2>Your Workouts</h2>
-            <!-- Display a list of user's workouts, workout plans, etc. -->
-        </section>
-
-        <section id="nutrition">
-            <h2>Your Nutrition</h2>
-            <!-- Display user's nutrition information, meal plans, etc. -->
-        </section>
-
-        <section id="progress">
-            <h2>Your Progress</h2>
-            <!-- Display charts, graphs, or statistics related to user's fitness progress -->
-        </section>
-    </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <footer>
-        <!-- Add footer content, copyright information, etc. -->
+        <!-- Footer content -->
+        <p>&copy; Fit Pro User Dashboard</p>
     </footer>
 </body>
 </html>

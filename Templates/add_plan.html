@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Workout Plan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #333;
+            color: #fff;
+            margin: 0;
+        }
+
+        form {
+            width: 60%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        select, input[type="text"], input[type="number"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background: url('arrow-down.png') no-repeat right;
+            background-size: 20px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add Workout Plan</h1>
+    <form action="/add_plan" method="POST">
+        <label for="day">Day:</label>
+        <select id="day" name="day" required>
+            <option value="monday">Monday</option>
+            <option value="tuesday">Tuesday</option>
+            <option value="wednesday">Wednesday</option>
+            <option value="thursday">Thursday</option>
+            <option value="friday">Friday</option>
+            <option value="saturday">Saturday</option>
+        </select><br><br>
+
+        <label for="exercise_name">Exercise Name:</label>
+        <input type="text" id="exercise_name" name="exercise_name" required><br><br>
+
+        <label for="sets">Sets:</label>
+        <input type="number" id="sets" name="sets" required><br><br>
+
+        <label for="reps">Reps:</label>
+        <input type="number" id="reps" name="reps" required><br><br>
+
+        <label for="level">Level:</label>
+        <select id="level" name="level" required>
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+        </select><br><br>
+
+        <label for="goal">Goal:</label>
+        <select id="goal" name="goal" required>
+            <option value="Muscle Gain">Muscle Gain</option>
+            <option value="Endurance">Endurance</option>
+            <option value="Max Strength">Max Strength</option>
+            <option value="Get Toned">Get Toned</option>
+        </select><br><br>
+
+        <label for="area">Area:</label>
+        <select id="area" name="area" required>
+            <option value="Back">Back</option>
+            <option value="Shoulder">Shoulder</option>
+            <option value="Arm">Arm</option>
+            <option value="Chest">Chest</option>
+            <option value="Abs">Abs</option>
+            <option value="Leg">Leg</option>
+            <option value="FullBody">Full Body</option>
+        </select><br><br>
+
+        <label for="info">Details:</label>
+        <textarea id="info" name="info" rows="4" cols="2" required></textarea><br><br>
+
+        <input type="submit" value="Add Plan">
+    </form>
+</body>
+</html>

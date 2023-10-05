@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout 7</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='workout_all.css') }}">
+    <script>
+        // JavaScript function to toggle workout description
+        function toggleDescription() {
+            var description = document.getElementById("workout-description");
+            if (description.style.display === "none" || description.style.display === "") {
+                description.style.display = "block";
+            } else {
+                description.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Workout 7</h1>
+    </header>
+
+    <main>
+        <section class="workout-description">
+            <h2>Description</h2>
+       <ul>
+    <li><strong>Starting Position:</strong>
+        <ul>
+            <li>Sit down on the lat pulldown machine and secure the thigh pads over your thighs.</li>
+            <li>Grab the wide bar attachment or handles with an overhand grip (palms facing away), hands wider than shoulder-width apart.</li>
+            <li>Keep your back straight, chest up, and shoulders relaxed.</li>
+        </ul>
+    </li>
+    <li><strong>Engage Your Core:</strong>
+        <ul>
+            <li>Tighten your core muscles to stabilize your spine.</li>
+        </ul>
+    </li>
+    <li><strong>Pull the Bar Down:</strong>
+        <ul>
+            <li>Exhale as you pull the bar down toward your chest, contracting your latissimus dorsi muscles (upper back).</li>
+            <li>Squeeze your shoulder blades together as you pull.</li>
+        </ul>
+    </li>
+    <li><strong>Hold at the Bottom:</strong>
+        <ul>
+            <li>When the bar is close to your chest, hold the position for a brief pause to maximize the contraction in your lats.</li>
+        </ul>
+    </li>
+    <li><strong>Slowly Release:</strong>
+        <ul>
+            <li>Inhale as you slowly and controlledly allow the bar to rise back up to the starting position, fully extending your arms.</li>
+        </ul>
+    </li>
+    <li><strong>Repeat:</strong>
+        <ul>
+            <li>Perform the desired number of repetitions. Sets of 8-12 reps are common for lat pulldowns.</li>
+        </ul>
+    </li>
+</ul>
+
+
+            <p>Sets:3</p>
+            <p>Rep:10</p>
+        </section>
+
+        <!-- Add an image representation of the exercise -->
+        <img src="{{ url_for('static', filename='GIF/lat pull down.gif') }}" alt="Exercise 7 Image" width="300">
+
+        <!-- Add a button to toggle workout description -->
+        <button onclick="toggleDescription()">Tips and Notes:</button>
+
+        <!-- Add a div for workout description that can be toggled -->
+        <div id="workout-description" style="display: none;">
+            <h2>Additional Details</h2>
+            <ul>
+        <li>Use proper form: Keep your back straight, avoid swinging, and use a controlled motion throughout the exercise.</li>
+        <li>Choose an appropriate weight: Select a weight that allows you to complete your desired number of reps with good form.</li>
+        <li>Don't use your biceps: Focus on using your lats to pull the bar down, not your arms. Your arms should act as hooks.</li>
+        <li>Variations: You can vary your grip (wide, narrow, or neutral) to target different parts of your back and arms.</li>
+        <li>Warm up: Prior to lat pulldowns, warm up your shoulder and back muscles with light stretches or warm-up sets.</li>
+        <li>Consult a fitness professional: If you're new to the exercise or have specific fitness goals, consider seeking guidance from a fitness expert to ensure proper technique and safety.</li>
+    </ul>
+
+        </div>
+    </main>
+
+    <footer>
+        <!-- Add footer content here -->
+    </footer>
+</body>
+</html>

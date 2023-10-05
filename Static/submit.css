@@ -1,0 +1,157 @@
+/* Reset default styles for certain elements */
+body, h1, h2, ul, li, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('img1.png'); /* Replace with the actual path to your background image */
+    background-size: cover; /* Cover the entire viewport */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-attachment: fixed; /* Fixed background while scrolling */
+    background-position: center; /* Center the image */
+    margin: 0;
+}
+
+header {
+    background-color: black;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #0056b3;
+}
+
+main {
+    padding: 20px;
+    min-height: calc(100vh - 64px);
+    overflow-y: auto;
+}
+
+section {
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(-10px);
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+form label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Update width for input fields and reduce padding and font size */
+form input[type="text"],
+form input[type="number"] {
+    width: 10%;
+    padding: 8px; /* Reduced padding */
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px; /* Reduced font size */
+}
+
+button[type="button"] {
+    background-color: #3e3e3ee9;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="button"]:hover {
+    background-color:  #3e3e3ee9;
+}
+
+.submit-button-container {
+    text-align: center;
+}
+
+input[type="submit"] {
+    background-color:  #3e3e3ee9;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+input[type="submit"]:hover {
+    background-color:  #3e3e3ee9;
+}
+
+/* Add styles for dynamically added entry fields */
+.exercise-entry, .nutrition-entry {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.exercise-entry input, .nutrition-entry input {
+    margin-right: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+}

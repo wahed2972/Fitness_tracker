@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>User Registration</h2>
+        <form action="/register" method="post">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+
+            <label for="email">Email ID:</label>
+            <input type="text" id="email" name="email" required><br><br>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required><br><br>
+
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" name="height" required><br><br>
+
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" name="weight" required><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+        
+            <label for="fitnessGoal">Select Your Fitness Goal:</label>
+            <select id="fitnessGoal" name="selectedGoal" required>
+                <option value="Muscle Gain">Muscle Gain</option>
+                <option value="Endurance">Endurance</option>
+                <option value="Max Strength">Max Strength</option>
+                <option value="Get Toned">Get Toned</option>
+            </select>
+            <br><br>
+        
+            <label for="focusArea">Select Area to Focus On:</label>
+            <select id="focusArea" name="selectedArea" required>
+                <option value="Back">Back</option>
+                <option value="Shoulder">Shoulder</option>
+                <option value="Arm">Arm</option>
+                <option value="Chest">Chest</option>
+                <option value="Abs">Abs</option>
+                <option value="Leg">Leg</option>
+                <option value="FullBody">Full Body</option>
+            </select>
+            <br>
+            <button id="nextButton" type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="/login">Login</a></p>
+    </div>
+
+</body>
+</html>
+
+<script>
+    let selectedGoal = ""; // Variable to store selected goal
+    let selectedArea = ""; // Variable to store selected area
+
+    // Function to set the selected goal
+    function selectGoal(goal) {
+        selectedGoal = goal;
+        document.getElementById("selectedGoal").value = goal;
+    }
+
+    // Function to set the selected area
+    function selectArea(area) {
+        selectedArea = area;
+        document.getElementById("selectedArea").value = area;
+    }
+
+    // Add a click event listener to the "Register" button
+    document.getElementById("nextButton").addEventListener("click", function () {
+        // Check if both goal and area are selected
+        if (selectedGoal !== "" && selectedArea !== "") {
+            // Submit the form
+            document.forms[0].submit();
+        } else {
+            alert("Please select a fitness goal and an area before proceeding.");
+        }
+    });
+</script>

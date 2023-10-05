@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout 2</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='workout_all.css') }}">
+    <script>
+        // JavaScript function to toggle workout description
+        function toggleDescription() {
+            var description = document.getElementById("workout-description");
+            if (description.style.display === "none" || description.style.display === "") {
+                description.style.display = "block";
+            } else {
+                description.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Workout 2</h1>
+    </header>
+
+    <main>
+        <section class="workout-description">
+            <h2>Description</h2>
+            <ul>
+    <li><strong>Grip the Bar:</strong>
+        <ul>
+            <li>Approach a pull-up bar or an overhead horizontal bar.</li>
+            <li>Stand facing the bar and reach up to grip it with your palms facing away from you (pronated grip). Your hands should be slightly wider than shoulder-width apart.</li>
+        </ul>
+    </li>
+    <li><strong>Hang From the Bar:</strong>
+        <ul>
+            <li>Hang from the bar with your arms fully extended.</li>
+            <li>Your body should be in a dead hang, and your feet should not touch the ground.</li>
+        </ul>
+    </li>
+    <li><strong>Engage Your Core:</strong>
+        <ul>
+            <li>Tighten your core muscles to maintain a straight body position. Avoid excessive swinging.</li>
+        </ul>
+    </li>
+    <li><strong>Initiate the Pull:</strong>
+        <ul>
+            <li>Begin the pull by squeezing your shoulder blades together.</li>
+            <li>Pull your chest towards the bar while keeping your elbows pointing down and back.</li>
+        </ul>
+    </li>
+    <li><strong>Chin Over the Bar:</strong>
+        <ul>
+            <li>Continue pulling until your chin is over the bar, and your upper chest almost touches it.</li>
+            <li>Your elbows should be fully bent at this point.</li>
+        </ul>
+    </li>
+    <li><strong>Lowering Phase:</strong>
+        <ul>
+            <li>Lower your body back down to the fully extended hanging position in a controlled manner.</li>
+            <li>Fully extend your arms without locking your elbows.</li>
+        </ul>
+    </li>
+    <li><strong>Repeat:</strong>
+        <ul>
+            <li>Perform the desired number of repetitions.</li>
+            <li>Beginners may start with a lower number and gradually increase over time.</li>
+        </ul>
+    </li>
+</ul>
+            <p>Sets:3</p>
+            <p>Rep:5</p>
+        </section>
+
+        <!-- Add an image representation of the exercise -->
+        <img src="{{ url_for('static', filename='GIF/pullup.gif') }}" alt="Exercise 2 Image" width="300">
+
+        <!-- Add a button to toggle workout description -->
+        <button onclick="toggleDescription()">Tips and Notes:</button>
+
+        <!-- Add a div for workout description that can be toggled -->
+        <div id="workout-description" style="display: none;">
+            <h2>Additional Details</h2>
+            <ul>
+    <li>Maintain proper form throughout the exercise to avoid strain or injury.</li>
+    <li>Use a full range of motion, going from a dead hang to chin over the bar.</li>
+    <li>Avoid using excessive momentum or swinging to complete the repetition.</li>
+    <li>You can vary the grip width and hand positions (e.g., wide grip, narrow grip, or palms facing you) to target different muscle groups.</li>
+    <li>If you're new to pull-ups, you can use assistance bands or a pull-up machine to make them more accessible.</li>
+    <li>As you gain strength, aim to increase the number of pull-ups you can do or try more challenging variations.</li>
+</ul>
+
+        </div>
+    </main>
+
+    <footer>
+        <!-- Add footer content here -->
+    </footer>
+</body>
+</html>

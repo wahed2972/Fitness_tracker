@@ -1,0 +1,102 @@
+/* Reset default styles for certain elements */
+body, h1, h2, ul, li, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(244, 244, 244, 0.9); /* Slight background color with transparency */
+    backdrop-filter: blur(10px); /* Apply a blur effect */
+    margin: 0;
+}
+
+/* Remove overflow: hidden; to allow scrolling */
+
+header {
+    background-color:black;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.back-button {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+    min-height: calc(100vh - 64px);
+    /* Add overflow-y: auto; to enable scrolling */
+    overflow-y: auto;
+}
+
+section#nutrition-plan {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff; /* Add a white background */
+    border-radius: 5px; /* Add rounded corners */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+/* Add styles for the table */
+/* Add styles for the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    /* Apply a blur effect to the table */
+    filter: blur(-100px); /* Adjust the blur radius as needed */
+    /* Set the background color to light black */
+    background-color: rgba(0, 0, 0, 0.2); /* Adjust the alpha value for transparency */
+    
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Style alternating rows with a background color */
+tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+/* Style the first column differently, for example, make it bold */
+td:first-child {
+    font-weight: bold;
+}
+
+/* Add a subtle hover effect on table rows */
+tr:hover {
+    background-color: #e0e0e0;
+    transition: background-color 0.3s ease;
+}
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}

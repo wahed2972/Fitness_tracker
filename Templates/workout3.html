@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout 3</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='workout_all.css') }}">
+    <script>
+        // JavaScript function to toggle workout description
+        function toggleDescription() {
+            var description = document.getElementById("workout-description");
+            if (description.style.display === "none" || description.style.display === "") {
+                description.style.display = "block";
+            } else {
+                description.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Workout 3</h1>
+    </header>
+
+    <main>
+        <section class="workout-description">
+            <h2>Description</h2>
+            <ul>
+    <li><strong>Starting Position:</strong>
+        <ul>
+            <li>Stand up straight with your feet shoulder-width apart.</li>
+            <li>Hold a barbell with both hands using an underhand grip (palms facing upward), and your hands should be slightly wider than shoulder-width apart.</li>
+        </ul>
+    </li>
+    <li><strong>Grip and Position:</strong>
+        <ul>
+            <li>Let the barbell hang at arm's length in front of your thighs.</li>
+            <li>Keep your elbows close to your torso throughout the exercise.</li>
+        </ul>
+    </li>
+    <li><strong>Engage Core:</strong>
+        <ul>
+            <li>Tighten your core muscles to stabilize your spine and maintain a straight posture.</li>
+        </ul>
+    </li>
+    <li><strong>Curling Phase:</strong>
+        <ul>
+            <li>Exhale and slowly curl the barbell upward by bending your elbows.</li>
+            <li>Keep your upper arms stationary; only your forearms should move.</li>
+            <li>Continue curling until the barbell is at shoulder level or slightly below, and your biceps are fully contracted.</li>
+        </ul>
+    </li>
+    <li><strong>Squeeze and Hold:</strong>
+        <ul>
+            <li>At the top of the movement, squeeze your biceps for a brief pause to maximize muscle contraction.</li>
+        </ul>
+    </li>
+    <li><strong>Lowering Phase:</strong>
+        <ul>
+            <li>Inhale and slowly lower the barbell back to the starting position.</li>
+            <li>Fully extend your arms without locking your elbows.</li>
+        </ul>
+    </li>
+    <li><strong>Repeat:</strong>
+        <ul>
+            <li>Perform the desired number of repetitions.</li>
+            <li>Start with a weight that allows you to maintain proper form, and gradually increase the weight as you progress.</li>
+        </ul>
+    </li>
+</ul>
+
+            <p>Set:3</p>
+            <p>Rep:10</p>
+        </section>
+
+        <!-- Add an image representation of the exercise -->
+        <img src="{{ url_for('static', filename='GIF/dumbell curls.gif') }}" alt="Exercise 3 Image" width="300">
+
+        <!-- Add a button to toggle workout description -->
+        <button onclick="toggleDescription()">Tips and Notes:</button>
+
+        <!-- Add a div for workout description that can be toggled -->
+        <div id="workout-description" style="display: none;">
+            <h2>Additional Details</h2>
+             <ul>
+            <li>Maintain proper form throughout the exercise to avoid strain or injury.</li>
+            <li>Avoid using your back or shoulders to lift the weight; focus on isolating your biceps.</li>
+            <li>Use a controlled and deliberate motion, avoiding any swinging or momentum.</li>
+            <li>Perform the exercise with a full range of motion, both during the curling and lowering phases.</li>
+            <li>You can use an EZ-curl bar if you have wrist discomfort with a straight barbell.</li>
+            <li>Variations like preacher curls or incline curls can target the biceps differently.</li>
+        </ul>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Add footer content here -->
+    </footer>
+</body>
+</html>

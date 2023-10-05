@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout 1:PushUps</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='workout_all.css') }}">
+    <script>
+        // JavaScript function to toggle workout description
+        function toggleDescription() {
+            var description = document.getElementById("workout-description");
+            if (description.style.display === "none" || description.style.display === "") {
+                description.style.display = "block";
+            } else {
+                description.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Workout 1:PushUps</h1>
+    </header>
+
+    <main>
+        <section class="workout-description">
+            <h2>Description</h2>
+            <ul>
+        <li><strong>Starting Position:</strong>
+            <ul>
+                <li>Begin in a plank position with your hands placed slightly wider than shoulder-width apart.</li>
+                <li>Your body should form a straight line from head to heels, and keep your feet together.</li>
+            </ul>
+        </li>
+        <li><strong>Hand Placement:</strong>
+            <ul>
+                <li>Position your hands firmly on the ground with your fingers pointing forward or slightly turned outward.</li>
+                <li>Ensure that your palms are under your shoulders.</li>
+            </ul>
+        </li>
+        <li><strong>Engage Core:</strong>
+            <ul>
+                <li>Tighten your core muscles to maintain a straight body.</li>
+                <li>Avoid arching your lower back or letting your hips sag.</li>
+            </ul>
+        </li>
+        <li><strong>Lowering Phase:</strong>
+            <ul>
+                <li>Bend your elbows and lower your body toward the ground.</li>
+                <li>Keep your elbows close to your body, not flaring out to the sides.</li>
+                <li>Lower your chest until it nearly touches the ground, or as far down as your strength allows while maintaining good form.</li>
+            </ul>
+        </li>
+        <li><strong>Pushing Phase:</strong>
+            <ul>
+                <li>Push through your palms and straighten your arms to lift your body back to the starting position.</li>
+                <li>Fully extend your arms without locking your elbows.</li>
+            </ul>
+        </li>
+        <li><strong>Repeat:</strong>
+            <ul>
+                <li>Perform the desired number of repetitions.</li>
+                <li>Beginners may start with a lower number and gradually increase over time.</li>
+            </ul>
+        </li>
+    </ul>
+            <p>Sets: 3</p>
+            <p>Reps: 10</p>
+        </section>
+
+        <!-- Add an image representation of the exercise -->
+        <img src="{{ url_for('static', filename='GIF/pushup.gif') }}" alt="Exercise 1 Image" width="300">
+
+        <!-- Add a button to toggle workout description -->
+        <button onclick="toggleDescription()">Tips and Notes:</button>
+
+        <!-- Add a div for workout description that can be toggled -->
+        <div id="workout-description" style="display: none;">
+            <h2>Additional Details</h2>
+            <ul>
+    <li>Maintain proper form throughout the exercise to avoid strain or injury.</li>
+    <li>Keep your head in a neutral position, looking down at the ground, to align your spine.</li>
+    <li>Focus on controlled movements, and don't rush through the exercise.</li>
+    <li>It's okay to start with modified push-ups (e.g., from your knees) if full push-ups are too challenging initially.</li>
+    <li>Gradually increase the number of push-ups you can do as you build strength.</li>
+</ul>
+
+        </div>
+    </main>
+
+    <footer>
+        <!-- Add footer content here -->
+    </footer>
+</body>
+</html>
