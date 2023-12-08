@@ -50,7 +50,18 @@
                 <option value="Leg">Leg</option>
                 <option value="FullBody">Full Body</option>
             </select>
-            <br>
+            <br><br>
+            
+            <label for="focusArea">Select Security Question:</label>
+            <select name="securityQuestion" required>
+                <option value="What is the name of your favorite childhood friend?">What is the name of your favorite childhood friend?</option>
+                <option value="What was the name of your primary school?">What was the name of your primary school?</option>
+                <option value="What is your pet's name?">What is your pet's name?</option>
+                <option value="What is your favorite sport?">What is your favorite sport?</option>
+            </select>
+
+            <input type="text" name="answer" placeholder="Enter Answer" required>
+            
             <button id="nextButton" type="submit">Register</button>
         </form>
         <p>Already have an account? <a href="/login">Login</a></p>

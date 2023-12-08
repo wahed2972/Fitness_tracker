@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='workout_log.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.css" rel="stylesheet">
+    <title>Fitness App</title>
+</head>
+<body>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <!-- <a href="/home">
+                <img class="logo" border="0" alt="iLearn logo" src="{{ url_for('static', filename='logo.png') }}"
+                    width="40" height="40">
+            </a> -->
+            <span class="navbar-brand mb-0 h1">GymPro</span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('dashboard') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('nutrition') }}">Nutrition</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('bmi') }}">BMI Calculator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('plan') }}">Plan</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ url_for('workout_log') }}">Workout Log</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('profile') }}">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Workout log</h1>
+    </header>
+    <section class="calendar">
+        <h2></h2>
+        <div id="calendar"></div>
+    </section>
+    <section class="workout-entry-section">
+        <h2>Create Workout Entry</h2>
+        <form action="add_workout" method="POST" id="workout-form">
+            <label for="exercise-name">Exercise Name</label>
+            <input type="text" id="exercise-name" required>
+            <label for="sets">Sets</label>
+            <input type="number" id="sets" required>
+            <label for="reps">Reps</label>
+            <input type="number" id="reps" required>
+            <label for="weight">Weight (lbs)</label>
+            <input type="number" id="weight" required>
+            <label for="workout-date">Date</label>
+            <input type="date" id="workout-date" required>
+            <button type="submit">Add Workout</button>
+        </form>
+    </section>
+    <div id="workout-display">
+        <!-- Workout details for the selected date will appear here -->
+    </div>
+    <div id="edit-dialog" class="modal">
+        <div class="modal-content">
+            <h3>Edit Workout</h3>            
+            <label for="edit-exercise-name">Exercise Name:</label>
+            <input type="text" id="edit-exercise-name" required>
+            <label for="edit-sets">Sets:</label>
+            <input type="number" id="edit-sets" required>
+            <label for="edit-reps">Reps:</label>
+            <input type="number" id="edit-reps" required>
+            <label for="edit-weights">Weights:</label>
+            <input type="number" id="edit-weights" required>           
+            <button id="edit-dialog-save">Save</button>
+            <button id="edit-dialog-cancel">Cancel</button>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<script src="{{ url_for('static', filename='js/workout_log.js') }}"></script>
+</body>
+</html>

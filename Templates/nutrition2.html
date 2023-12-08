@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nutrition Tracking</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        text-align: center;
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+    }
+
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+
+    select,
+    input[type="text"],
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    input[type="submit"] {
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #555;
+    }
+</style>
+<body>
+    <h1>Nutrition Tracking</h1>
+    <form id="nutritionForm" action="/store_nutrition" method="post">
+        <label for="foodName">Select Food:</label>
+        <select id="foodName" name="foodName">
+            <!-- Options will be populated dynamically -->
+        </select><br><br>
+        <label for="protein">Protein:</label>
+        <input type="text" id="protein" name="protein" readonly><br><br>
+        <label for="calorie">Calorie:</label>
+        <input type="text" id="calorie" name="calorie" readonly><br><br>
+        <label for="carbohydrates">Carbohydrates:</label>
+        <input type="text" id="carbohydrates" name="carbohydrates" readonly><br><br>
+        <label for="fat">Fat:</label>
+        <input type="text" id="fat" name="fat" readonly><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Populate the dropdown with food names from your CSV file
+            $.get('/get_food_names', function (data) {
+                data.forEach(function (foodName) {
+                    $('#foodName').append($('<option>', {
+                        value: foodName,
+                        text: foodName
+                    }));
+                });
+            });
+
+            // Fetch nutrition data when a food is selected
+            $('#foodName').change(function () {
+                var selectedFood = $(this).val();
+                $.get('/get_nutrition_data/' + selectedFood, function (data) {
+                    $('#protein').val(data.protein);
+                    $('#calorie').val(data.calorie);
+                    $('#carbohydrates').val(data.carbohydrates);
+                    $('#fat').val(data.fat);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

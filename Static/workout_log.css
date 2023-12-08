@@ -1,0 +1,224 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    background-image: url('workoutlog.jpg');
+    background-size: cover; /* Adjust to cover or contain the entire background */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+section.calendar {
+    margin: 10px;
+    padding: 10px;
+    background-color: transparent; /* Set the background to transparent */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label, input, button {
+    margin: 10px 0;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #000;
+}
+
+#calendar {
+    background-color: rgba(0, 0, 0, 0.7);;
+    border: none; /* Remove the border or adjust it as needed */
+}
+
+/* Modal for Workout Options */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal label {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.modal input {
+    width: 50%; /* Adjust the width as needed, for example, 50% of the container width */
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+
+.modal button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 10px; /* Add margin between the buttons */
+}
+
+.modal button:hover {
+    background-color: #0056b3;
+}
+
+/* Workout Entry Styles */
+.workout-entry {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.workout-entry .details {
+    flex: 1;
+}
+
+.workout-entry .actions {
+    margin-left: 10px;
+}
+
+.workout-entry button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+}
+
+.workout-entry button:hover {
+    background-color: #000;
+}
+
+/* Style for dialogue boxes 
+.dialog {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background 
+    color: #fff; /* Text color 
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners 
+    text-align: center; /* Center the content 
+    max-width: 400px; /* Limit the width 
+    margin: 0 auto; /* Center horizontally 
+}
+
+.dialog label {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.dialog input[type="text"],
+.dialog input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+.dialog button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.dialog button:hover {
+    background-color: #0056b3;
+}*/
+
+
+/* Style for the workout entry form */
+#workout-form {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    color: #fff; /* Text color */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    text-align: center; /* Center the form content */
+    max-width: 400px; /* Limit the form width */
+    margin: 0 auto; /* Center the form horizontally */
+}
+
+#workout-form label {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+#workout-form input[type="text"],
+#workout-form input[type="number"],
+#workout-form input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+#workout-form button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+#workout-form button:hover {
+    background-color: #0056b3;
+}
+.workout-entry-section h2 {
+    text-align: center;
+}
+

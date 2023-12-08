@@ -36,13 +36,13 @@ ul {
 }
 
 /* Style the list items (boxes) */
-li {
+.plan-item{
     display: inline-block;
     margin: 10px;
 }
 
 /* Style the links inside the boxes */
-li a {
+li .plan-btn{
     display: block;
     padding: 20px;
     background-color: #fff;
@@ -55,9 +55,10 @@ li a {
 }
 
 /* Style the link hover effect */
-li a:hover {
+li .plan-btn:hover {
     background-color: #333;
     color: #fff;
+    text-decoration: none;
 }
 
 p {

@@ -1,25 +1,71 @@
-
-* {
-    background-color: aliceblue;
+/* Custom CSS styles for the gym site */
+body {
+    background-image: url('home.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    color: #ffffff;
+    /* padding-top: 100px; /* Space below the navbar */
+    /* padding-bottom: 50px; Space above the footer */
 }
-
-
+section{
+    background-color: black;
+}
+/* Style the navigation links */
 .navbar {
-    background-color: black !important; /* Important to override Bootstrap styles */
-}
-.image {
-    margin-top: 50px;
-    margin-left: 320px;
-    width: 900px; /* Set the desired width for the container */
-    height: 800px; /* Set the desired height for the container */
-    background-image: url('home.jpeg'); /* Replace with the path to your image */
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background for the navbar */
+    position: fixed; /* Stick the navbar to the top */
+    top: 0; /* Distance from the top of the viewport */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it's above other elements */
 }
 
+.navbar-brand {
+    color: #000000 !important; /* White text for the navbar brand */
+}
+
+.navbar-nav .nav-link {
+    color: #000000 !important; /* White text for the navbar links */
+}
+
+/* Style the "Get Started" button */
+.btn-primary {
+    background-color: #FF5722; /* Custom orange color for the button */
+    border-color: #FF5722; /* Custom orange color for the button border */
+}
+
+/* Style the footer */
 footer {
-    background-color: #333;
-    color: #0a0000;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for the footer */
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0;
+    position: fixed; /* Stick the footer to the bottom */
+    bottom: 0; /* Distance from the bottom of the viewport */
+    width: 100%; /* Full width */
+}
+
+footer p {
+    color: #ffffff;
+}
+.centered-content {
+    text-align: center;
+    color: #ffffff;
+}
+
+.centered-content h1 {
+    font-size: 3rem;
+}
+
+.centered-content p {
+    font-size: 1.5rem;
+}
+
+.logged-out {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center center;
 }

@@ -3,28 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <title>Beginner Workout Plan</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            margin: 0;
-            padding: 0;
-        }
 
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        body {
+            background-color:light;
+        }
+        /* Apply styles to the table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+    
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+    
+        th {
             background-color: #333;
             color: #fff;
-            padding: 10px;
         }
-
-        h1 {
-            margin: 0;
+    
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
         }
-
+    
+        tr:hover {
+            background-color: #ddd;
+        }
+    
+        /* Style the header cells */
+        th.header-highlight {
+            background-color: #333;
+            color: #fff;
+        }
+    
+        /* Style the back button */
         .back-button {
             text-decoration: none;
             color: #fff;
@@ -32,64 +50,85 @@
             padding: 5px 10px;
             border-radius: 5px;
         }
-
-        .container {
-            width: 80%;
-            margin: 20px auto;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: center;
-        }
-
-        th {
-            background-color: #333;
+    
+        /* Style the individual day rows */
+        tr.day-row {
+            background-color: #007bff;
             color: #fff;
         }
-
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        tr:hover {
-            background-color: #ddd;
-        }
     </style>
+    
 </head>
 <body>
-    <div class="header-container">
-        <h1>Beginner Workout Plan</h1>
-        <a class="back-button" href="{{ url_for('dashboard') }}">Back to Dashboard</a>
-    </div>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <!-- <a href="/home">
+                <img class="logo" border="0" alt="iLearn logo" src="{{ url_for('static', filename='logo.png') }}"
+                    width="40" height="40">
+            </a> -->
+            <span class="navbar-brand mb-0 h1">GymPro</span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('dashboard') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('nutrition') }}">Nutrition</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('bmi') }}">BMI Calculator</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ url_for('plan') }}">Plan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('workout_log') }}">Workout Log</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('profile') }}">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
+    <h1> Beginner Plan </h1>
     <div class="container">
         <table>
             <thead>
                 <tr>
-                    <th>Day</th>
-                    <th>Exercise Name</th>
-                    <th>Sets</th>
-                    <th>Reps</th>
+                    <th class="header-highlight">Day</th>
+                    <th class="header-highlight">Exercise Name</th>
+                    <th class="header-highlight">Sets</th>
+                    <th class="header-highlight">Reps</th>
                 </tr>
             </thead>
             <tbody>
-                {% for exercise in workout_plan %}
+                {# Define the order of days as per your workout plan (Monday to Saturday) #}
+                {% set days_order = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'] %}
+                {# Loop through the days in the desired order #}
+                {% for day in days_order %}
+                <!-- Calculate the rowspan using exercise_lengths dictionary -->
+              
+                <!-- Rest of the code for exercises -->
+                {% for exercise in workout_plan if exercise.day == day %}
                     <tr>
-                        <td>{{ exercise.day }}</td>
+                        <td rowspan="{{ exercise_lengths[day] }}">{{ day }}</td>
                         <td>{{ exercise.exercise_name }}</td>
                         <td>{{ exercise.sets }}</td>
                         <td>{{ exercise.reps }}</td>
                     </tr>
                 {% endfor %}
+            {% endfor %}
             </tbody>
         </table>
     </div>

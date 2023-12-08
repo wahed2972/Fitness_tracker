@@ -1,0 +1,164 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Your existing CSS styles */
+
+/* Style for the header */
+.header {
+    background: linear-gradient(to bottom, #3498db, #2980b9); /* Gradient background */
+    color: #fff; /* Text color */
+    padding: 20px; /* Padding for spacing */
+    text-align: center;
+    border-bottom: 2px solid #1f497d; /* Add a subtle border at the bottom */
+}
+
+.header h1 {
+    font-size: 36px; /* Adjust the font size as needed */
+    font-weight: bold;
+    margin: 0; /* Remove margin to reduce space */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Text shadow for a subtle effect */
+}
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f3f3f3;
+    color: #333;
+}
+
+.container {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+}
+
+.panel {
+    background-color: #fff;
+    padding: 50px;
+    margin: 30px 350px 20px 350px;
+    
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#introText {
+    font-size: 16px;
+    color: #777;
+}
+
+form p {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #3498db;
+    margin-bottom: 10px;
+    background-color: #f8f8f8;
+    outline: none;
+    color: #333;
+}
+
+button.btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#results {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #333;
+}
+
+#table table {
+    width: 70%;
+    background-color: #fff;
+    border: 5px solid #3498db;
+    border-collapse: collapse;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+
+#table table caption {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#table table th, #table table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+
+/* Style the table headers separately */
+#table table th {
+    background-color: #3498db;
+    color: #fff;
+}
+
+/* Media Query for small screens */
+@media (max-width: 600px) {
+    input, button.btn {
+        width: 80%;
+    }
+}
+
+/* Your existing CSS styles */
+
+/* Your existing CSS styles */
+
+/* Style for result container */
+#result-container {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin: 10px auto; /* Reduce the top and bottom margin */
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    width: 70%;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Style for recommendations */
+#recommendations {
+    margin-top: 20px;
+}
+
+#recommendations h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#recommendations-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Style for list items */
+#recommendations-list li {
+    margin-bottom: 10px;
+}

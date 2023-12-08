@@ -1,10 +1,13 @@
 
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
-        margin: 0;
-        padding: 0;
-    }
+    /* Apply styles to the body */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('log.jpg'); /* Add your image URL here */
+    background-size: cover; /* Scale the image to cover the entire body */
+    background-position: center; /* Center the image horizontally and vertically */
+    font-family: Arial, sans-serif; /* You can specify your desired font here */
+}
 
     .header-container {
         display: flex;
@@ -28,11 +31,12 @@
     }
 
     .container {
-        width: 80%;
+        width: 60%;
         margin: 20px auto;
-        background-color: #fff;
+        background-color: rgba(255, 255, 255, 0.8);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         padding: 20px;
+        border-radius: 30px;
     }
 
     form {
@@ -42,7 +46,7 @@
 
     label {
         display: block;
-        margin-bottom: 8px;
+        /* margin-bottom: 8px; */
         font-weight: bold;
     }
 

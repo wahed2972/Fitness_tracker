@@ -19,6 +19,13 @@
             <button type="submit">Login</button>
         </form>
         <p>Don't have an account? <a href="/register">Register</a></p>
+        <p>Don't remember Password? <br> <a href="/forgotPassword">Forgot Password</a><p>
+        {% if error %}
+        <div class="error-message">
+        {{ error }}
+        </div>
+        {% endif %}
+
     </div>
 </body>
 </html>

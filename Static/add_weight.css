@@ -1,0 +1,44 @@
+/* add_weight.css */
+/* Add Weight Entry page styles */
+
+h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+.input-group {
+    margin-bottom: 10px;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: #6C757D;
+    color: #fff;
+}
+
+/* You can add more styles as needed */

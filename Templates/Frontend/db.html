@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Information</title>
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Nutrition Information</h1>
+    <form id="nutritionForm">
+        <label for="foodQuery">Enter a food query:</label>
+        <input type="text" id="foodQuery" required>
+        <label for="chartType">Select Chart Type:</label>
+        <select id="chartType">
+            <option value="bar">Bar Chart</option>
+            <option value="pie">Pie Chart</option>
+            <option value="doughnut">Doughnut Chart</option>
+            <option value="line">Line Chart</option>
+            <option value="radar">Radar Chart</option>
+            <option value="polarArea">Polar Area Chart</option>
+        </select>
+        <button type="submit">Get Nutrition</button>
+    </form>
+    <div id="result">
+        <!-- Add a div for the chart -->
+        <div id="chartContainer">
+            <canvas id="nutritionChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("nutritionForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var query = document.getElementById("foodQuery").value;
+            var api_url = 'https://api.api-ninjas.com/v1/nutrition?query=' + query;
+            var api_key = 'Jlh7a0UtRAQh9kONpuEYHA==1ku9R1AoxhprEdHG'; // Replace with your actual API key
+
+            fetch(api_url, {
+                headers: {
+                    'X-Api-Key': api_key
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                var nutritionData = data[0]; // Assuming there's a single result
+
+                // Extract data for the chart
+                var labels = Object.keys(nutritionData).filter(key => key !== 'name');
+                var values = labels.map(label => nutritionData[label]);
+
+                // Include 'calories' in labels and values
+                labels.unshift('calories');
+                values.unshift(nutritionData.calories);
+
+                // Remove the existing chart container
+                var chartContainer = document.getElementById("chartContainer");
+                chartContainer.innerHTML = '<canvas id="nutritionChart" width="400" height="200"></canvas>';
+
+                // Get chart canvas element
+                var ctx = document.getElementById('nutritionChart').getContext('2d');
+                
+                // Get the selected chart type
+                var selectedChartType = document.getElementById("chartType").value;
+                
+                // Create different chart types based on the user's selection
+                switch (selectedChartType) {
+                    case 'bar':
+                        createBarChart(ctx, labels, values, nutritionData);
+                        break;
+                    case 'pie':
+                        createPieChart(ctx, labels, values, nutritionData);
+                        break;
+                    case 'doughnut':
+                        createDoughnutChart(ctx, labels, values, nutritionData);
+                        break;
+                    case 'line':
+                        createLineChart(ctx, labels, values, nutritionData);
+                        break;
+                    case 'radar':
+                        createRadarChart(ctx, labels, values, nutritionData);
+                        break;
+                    case 'polarArea':
+                        createPolarAreaChart(ctx, labels, values, nutritionData);
+                        break;
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                document.getElementById("errorContainer").innerText = "Error occurred while fetching nutrition information.";
+            });
+        });
+
+        function createBarChart(ctx, labels, values, nutritionData) {
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels.slice(1),  // Exclude 'name'
+                    datasets: [{
+                        label: 'Nutrition Data',
+                        data: values.slice(1),  // Exclude 'name'
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        function createPieChart(ctx, labels, values, nutritionData) {
+            new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: labels.slice(1),  // Exclude 'name'
+                    datasets: [{
+                        data: values.slice(1),  // Exclude 'name'
+                        backgroundColor: [
+                            'red', 'blue', 'green', 'orange', 'purple', 'yellow', 'pink', 'brown'
+                        ],
+                    }]
+                },
+            });
+        }
+
+        function createDoughnutChart(ctx, labels, values, nutritionData) {
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: labels.slice(1),  // Exclude 'name'
+                    datasets: [{
+                        data: values.slice(1),  // Exclude 'name'
+                        backgroundColor: [
+                            'red', 'blue', 'green', 'orange', 'purple', 'yellow', 'pink', 'brown'
+                        ],
+                    }]
+                },
+            });
+        }
+
+        function createLineChart(ctx, labels, values, nutritionData) {
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels.slice(1),  // Exclude 'name'
+                    datasets: [{
+                        label: 'Nutrition Data',
+                        data: values.slice(1),  // Exclude 'name'
+                        borderColor: 'blue',
+                        fill: false,
+                    }]
+                },
+            });
+        }
+
+        function createRadarChart(ctx, labels, values, nutritionData) {
+            new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: labels.slice(1),  // Exclude 'name'
+                    datasets: [{
+                        label: 'Nutrition Data',
+                        data: values.slice(1),  // Exclude 'name'
+                        borderColor: 'blue',
+                    }]
+                },
+            });
+        }
+
+        function createPolarAreaChart(ctx, labels, values, nutritionData) {
+            new Chart(ctx, {
+                type: 'polarArea',
+                data: {
+                    labels: labels.slice(1),  // Exclude 'name'
+                    datasets: [{
+                        data: values.slice(1),  // Exclude 'name'
+                        backgroundColor: [
+                            'red', 'blue', 'green', 'orange', 'purple', 'yellow', 'pink', 'brown'
+                        ],
+                    }]
+                },
+            });
+        }
+    </script>
+</body>
+</html>
